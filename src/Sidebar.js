@@ -33,4 +33,27 @@ const Sidebar = () => {
     )
 }
 
+
+const styles = {
+    sidebar: {
+        width: '6rem',
+        backgroundColor: '#f3f3f3',
+        padding: '0.5rem 0',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+    logo: {
+        fontFamily: 'Fauna One',
+        color: '#666',
+        fontSize: '3rem',
+    },
+    
+
+
+}
+
+
+
+
 export default Sidebar
