@@ -4,6 +4,9 @@ import quill from './quill.svg'
 import newIcon from './new.png'
 import newHover from './new-hover.png'
 
+import './Sidebar.css'
+
+
 const Sidebar = () => {
   return (
     <div
@@ -21,20 +24,20 @@ const Sidebar = () => {
         />
       </div>
 
-      <a href="/notes">
-        <img
+      <a href="/notes" style={styles.newNote}>
+        <img style={styles.aImg}
           src={newHover}
           alt="New note"
         />
-        <img
+        <img style={styles.aImg}
           src={newIcon}
           alt="New note"
         />
       </a>
 
-      <div className="SignOut">
-        <button>
-          <i className="fa fa-sign-out"></i>
+      <div className="SignOut" style={styles.signOut}>
+        <button style={styles.signOutButton}>
+          <i className="fa fa-sign-out" style={styles.signOutButtonFa}></i>
         </button>
       </div>
     </div>
@@ -58,7 +61,41 @@ const styles = {
   logoImg: {
     width: '3rem',
     paddingLeft: '0.4rem',
-  }
+  },
+  
+  
+  
+  newNote: {
+    marginTop: '2rem',
+    position: 'relative',
+    width: '40px',
+  },
+  button: {
+    backgroundColor: 'transparent',
+    border: '0',
+    color: '#008BF8',
+    cursor: 'pointer',
+  },
+  aImg: {
+    position: 'absolute',
+    left: '0',
+    width: '100%',
+    transition: 'opacity 0.25s ease-in-out',
+  },
+  imgOutline: {
+    opacity: '0',
+  },
+
+  signOut: {
+    position: 'absolute',
+    bottom: '1rem',
+  },
+  signOutButton: {
+    outline: 'none',
+  },
+  signOutButtonFa: {
+    fontSize: '2rem',
+  },
 }
 
 export default Sidebar
