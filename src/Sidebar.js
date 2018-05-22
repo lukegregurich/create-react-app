@@ -21,6 +21,7 @@ const Sidebar = () => {
                     alt="Note note"   
                 />
             </a>
+        
 
             <div class="SignOut">
                 <button>
@@ -47,8 +48,9 @@ const styles = {
         fontFamily: 'Fauna One',
         color: '#666',
         fontSize: '3rem',
+        
     },
-    
+
 
 
 }
