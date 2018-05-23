@@ -9,23 +9,7 @@ class Main extends React.Component {
         super()
         this.state = {
             currentNote: this.blankNote(),
-            notes: [
-                {
-                    id: 1,
-                    title: 'Why I <3 JS',
-                    body: 'Because I like code and Js is code',
-                },
-                {
-                    id: 2,
-                    title: 'Breakfast thoughts',
-                    body: 'I love it',
-                },
-                {
-                    id: 3,
-                    title: 'Watching the first episode of Black Mirror with your parents',
-                    body: 'Don\'t',
-                },
-            ]
+            notes: [],
         }
     }
 
@@ -45,6 +29,38 @@ class Main extends React.Component {
         this.setCurrentNote(this.blankNote())
     }
 
+    saveNote = (note) => {
+        const notes = [...this.state.notes]
+        if(!note.id){
+            note.id = Date.now()
+            notes.push(note)
+        } else {
+            const i = notes.findIndex(currentNote => currentNote.id === note.id)
+            notes[i] = note
+        }
+
+        this.setState({ notes })
+        this.setCurrentNote( note )
+
+    }
+
+    deleteNote = (note) => {
+        const notes = [...this.state.notes]
+        if(!note.id){
+            note.id = Date.now()
+            notes.remove(note)
+        } else {
+            const i = notes.findIndex(currentNote => currentNote.id === note.id)
+            notes[i] = note
+        }
+
+        this.setState({ notes })
+        this.setCurrentNote( note )
+
+    }
+
+
+
     render() {
         return (
           <div className="Main" style={style}>
@@ -53,7 +69,10 @@ class Main extends React.Component {
                 notes={this.state.notes} 
                 setCurrentNote={this.setCurrentNote}
             />
-            <NoteForm currentNote={this.state.currentNote}/>
+            <NoteForm 
+                currentNote={this.state.currentNote}
+                saveNote={this.saveNote}
+            />
           </div>
         )
     }
