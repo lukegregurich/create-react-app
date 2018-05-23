@@ -1,6 +1,25 @@
 # Noteherder
 
-## Homework
+## Homework- Day 7
+
+* Make the delete button work
+
+### Bonus Credit
+
+* Persist the list of notes across page refreshes,
+using `localStorage`.
+
+### Super Mega Bonus Credit
+
+* Sign up for Firebase
+* Add the re-base library to project
+* sync your notes with Firebase
+* profit
+
+
+
+
+## Homework- Day 6
 
 * Finish styling `Sidebar`.
 * Add JSX and style to `NoteList and `NoteForm`.
