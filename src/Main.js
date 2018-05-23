@@ -10,7 +10,7 @@ class Main extends React.Component {
         this.state = {
             currentNote: this.blankNote(),
             notes: [],
-            deleteNote: this.deleteNote
+            deleteNote: this.deleteNote,
         }
     }
 
@@ -45,11 +45,11 @@ class Main extends React.Component {
 
     }
 
-    deleteNote = () => {
+    deleteNote = (note) => {
         const notes = {...this.state.notes}
         delete notes[this.state.currentNote.id]
         this.setState({ notes })
-        this.resetCurrentNote()
+        this.resetCurrentNote(note)
     }
 
     render() {
@@ -63,7 +63,7 @@ class Main extends React.Component {
             <NoteForm 
                 currentNote={this.state.currentNote}
                 saveNote={this.saveNote}
-                deleteNote={this.state.removeNote}
+                deleteNote={this.state.deleteNote}
             />
           </div>
         )
