@@ -4,14 +4,39 @@ import Sidebar from './Sidebar'
 import NoteList from './NoteList'
 import NoteForm from './NoteForm'
 
-const Main = () => {
-    return (
-        <div className="Main" style={style}>
+class Main extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            notes: [
+                {
+                    id: 1,
+                    title: 'Why I <3 JS',
+                    body: 'Because I like code and Js is code',
+                },
+                {
+                    id: 2,
+                    title: 'Breakfast thoughts',
+                    body: 'I love it',
+                },
+                {
+                    id: 3,
+                    title: 'Watching the first episode of Black Mirror with your parents',
+                    body: 'Don\'t',
+                },
+            ]
+        }
+    }
+
+    render() {
+        return (
+          <div className="Main" style={style}>
             <Sidebar />
-            <NoteList />
+            <NoteList notes={this.state.notes} />
             <NoteForm />
-        </div>
-    )
+          </div>
+        )
+    }
 }
 
 const style =  {
