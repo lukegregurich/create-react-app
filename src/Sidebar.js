@@ -35,8 +35,9 @@ const Sidebar = () => {
         <div className={css(styles.signOut)}>
           <button className={css(styles.button)}>
             <i 
-            className={`fas fa-sign-out-alt ${css(styles.buttonIcon)}`}
-            title = "sign out"></i>
+                className={`fas fa-sign-out-alt ${css(styles.buttonIcon)}`}
+                title = "sign out">
+            </i>
           </button>
         </div>
       </nav>
