@@ -7,41 +7,61 @@ import newHover from './new-hover.png'
 import './Sidebar.css'
 
 
-const Sidebar = () => {
-  return (
-    <div
-      className="Sidebar"
-      style={styles.sidebar}
-    >
-      <div
-        className="logo"
-        style={styles.logo}
-      >
-        <img
-          src={quill}
-          alt="Noteherder"
-          style={styles.logoImg}
-        />
-      </div>
+class Sidebar extends React.Component {
+    state = {
+        newIconHovered: false,
+    }
+    handleMouseEnter() {
+        this.setState({
+            newIconHovered: true
+        })
+    }
+    handleMouseLeave() {
+        this.setState({
+            newIconHovered: false
+        })
+    }
 
-      <a href="/notes" style={styles.newNote}>
-        <img style={styles.aImg}
-          src={newHover}
-          alt="New note"
-        />
-        <img style={styles.aImg}
-          src={newIcon}
-          alt="New note"
-        />
-      </a>
+    render() {
+        return (
+            <div
+            className="Sidebar"
+            style={styles.sidebar}
+            >
+            <div
+                className="logo"
+                style={styles.logo}
+            >
+                <img
+                src={quill}
+                alt="Noteherder"
+                style={styles.logoImg}
+                />
+            </div>
 
-      <div className="SignOut" style={styles.signOut}>
-        <button style={styles.signOutButton}>
-          <i className="fa fa-sign-out" style={styles.signOutButtonFa}></i>
-        </button>
-      </div>
-    </div>
-  )
+            <a 
+                href="/notes" 
+                style={styles.newNote}
+
+            >
+                <img style={styles.aImg}
+                src={newHover}
+                alt="New note"
+                />
+                <img style={styles.aImg}
+                src={newIcon}
+                alt="New note"
+                />
+            </a>
+
+            <div className="SignOut" style={styles.signOut}>
+                <button style={styles.signOutButton}>
+                <i className="fa fa-sign-out" style={styles.signOutButtonFa}></i>
+                </button>
+            </div>
+            </div>
+        )
+    }
 }
 
 const styles = {
